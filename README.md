@@ -1,0 +1,2 @@
+# WPPlugin_AdminUserDeleteWithContentsDisabled
+WordPress Plugin: ユーザー削除の制限
