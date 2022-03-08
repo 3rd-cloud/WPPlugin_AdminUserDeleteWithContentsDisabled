@@ -1,4 +1,4 @@
-=== ユーザー削除の制限 ===
+=== Admin User Delete With Contents Disabled ===
 Contributors: mikumo
 Donate link: 
 Tags: admin, user
