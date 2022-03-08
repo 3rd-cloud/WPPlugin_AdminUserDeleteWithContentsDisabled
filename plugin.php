@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: ユーザー削除の制限
+Plugin Name: Admin User Delete With Contents Disabled
 Plugin URI: https://github.com/3rd-cloud/WPPlugin_AdminUserDeleteWithContentsDisabled
 Description: ユーザー削除時に「すべてのコンテンツを消去します。」を選択できなくすることで、誤って記事やメディアライブラリのファイルをまとめて削除する事故を防ぎます。
 Author: Yuji Mikumo
@@ -9,18 +9,18 @@ Version: 1.0
 License: GPL2
 */
 /*
-ユーザー削除の制限 is free software: you can redistribute it and/or modify
+Admin User Delete With Contents Disabled is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
  
-ユーザー削除の制限 is distributed in the hope that it will be useful,
+Admin User Delete With Contents Disabled is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
  
 You should have received a copy of the GNU General Public License
-along with ユーザー削除の制限. If not, see https://github.com/3rd-cloud/WPPlugin_AdminUserDeleteWithContentsDisabled/blob/main/LICENSE.
+along with Admin User Delete With Contents Disabled. If not, see https://github.com/3rd-cloud/WPPlugin_AdminUserDeleteWithContentsDisabled/blob/main/LICENSE.
 */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
