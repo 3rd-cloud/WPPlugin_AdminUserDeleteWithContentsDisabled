@@ -1,12 +1,13 @@
 === ユーザー削除の制限 ===
 Contributors: mikumo
 Donate link: 
-Tags: admin
+Tags: admin, user
 Requires at least: 5.0
 Tested up to: 5.9.1
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires PHP: 5.6
 
 ユーザー削除時に「すべてのコンテンツを消去します。」を選択できなくします。
 
@@ -17,8 +18,18 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Installation ==
 
-1. Upload `disabled-user-delete-with-contents/plugin.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'ユーザー削除の制限' menu in WordPress
+1. From the WP admin panel, click “Plugins” -> “Add new”.
+2. In the browser input box, type “ユーザー削除の制限”.
+3. Select the “My Custom Style Css Manager” plugin and click “Install”.
+4. Activate the plugin.
+
+OR…
+
+1. Download the plugin from this page.
+2. Save the .zip file to a location on your computer.
+3. Open the WP admin panel, and click “Plugins” -> “Add new”.
+4. Click “upload”.. then browse to the .zip file downloaded from this page.
+5. Click “Install”.. and then “Activate plugin”.
 
 == Frequently asked questions ==
 
@@ -35,9 +46,9 @@ A. ありません。プラグインを有効にするだけでOKです。
 1.0
 Initial working version.
 
-== Upgrade notice ==
+== Upgrade Notice ==
 
-
+ありません。
 
 == Arbitrary section 1 ==
 
