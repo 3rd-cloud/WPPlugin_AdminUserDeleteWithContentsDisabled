@@ -5,7 +5,7 @@ Plugin URI: https://github.com/3rd-cloud/WPPlugin_AdminUserDeleteWithContentsDis
 Description: ユーザー削除時に「すべてのコンテンツを消去します。」を選択できなくすることで、誤って記事やメディアライブラリのファイルをまとめて削除する事故を防ぎます。
 Author: Yuji Mikumo
 Author URI: https://github.com/3rd-cloud/
-Version: 1.0
+Version: 1.1
 License: GPL2
 */
 /*
@@ -13,12 +13,12 @@ Admin User Delete With Contents Disabled is free software: you can redistribute 
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 2 of the License, or
 any later version.
- 
+
 Admin User Delete With Contents Disabled is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
- 
+
 You should have received a copy of the GNU General Public License
 along with Admin User Delete With Contents Disabled. If not, see https://github.com/3rd-cloud/WPPlugin_AdminUserDeleteWithContentsDisabled/blob/main/LICENSE.
 */
@@ -27,9 +27,12 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( ! class_exists( 'WPAdmin_User_Delete_Disabled' ) ) {
     class WPAdmin_User_Delete_Disabled {
+        private $textdomain = 'wpadmin-user-delete-disabled';
 
         public function __construct() {
             global $pagenow;
+
+            load_textdomain( $this->textdomain, __DIR__ . '/languages/plugin-' . get_locale() . '.mo');
 
             if ( is_admin() && 'users.php' === $pagenow && strpos( $_SERVER["REQUEST_URI"], 'action=delete' ) ) {
                 add_action( 'after_setup_theme', array( $this, 'action_after_setup_theme' ), 10000 );
@@ -40,9 +43,9 @@ if ( ! class_exists( 'WPAdmin_User_Delete_Disabled' ) ) {
 
         public function action_after_setup_theme() {
             ob_start( function ( $buffer_html ) {
-                $target_tag  = 'input type="radio" id="delete_option0" name="delete_option" value="delete"';
-                $replace_tag = 'input type="radio" id="delete_option0" name="delete_option" value="delete_disabled" disabled';
-                $buffer_html = str_replace( $target_tag, $replace_tag, $buffer_html );
+                $target_tag  = '/(<label)(>.*?<input.+?type="radio".+?id="delete_option0".+?)(?:value="delete")(.*?>)/';
+                $replace_tag = '$1 style="color: #c0c0c0;"$2value="delete_disabled" disabled$3';
+                $buffer_html = preg_replace( $target_tag, $replace_tag, $buffer_html, 1 );
                 return $buffer_html;
             });
         }
@@ -54,7 +57,10 @@ if ( ! class_exists( 'WPAdmin_User_Delete_Disabled' ) ) {
         }
 
         public function action_admin_notices() {
-            echo '<div class="updated"><p>プラグイン : ユーザー削除の制限 有効<br />「すべてのコンテンツを消去します。」 は選択できない設定に変更されています。</p></div>';
+            $message = __( 'Plugin', $this->textdomain )
+                     .  ' : Admin User Delete With Contents Disabled<br />'
+                     . __( "'Delete all content.' is changed to a setting that cannot be selected.", $this->textdomain );
+            echo '<div class="updated"><p>' . $message . '</p></div>';
         }
     }
 }
