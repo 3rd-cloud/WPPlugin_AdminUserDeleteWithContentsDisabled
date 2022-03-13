@@ -52,5 +52,3 @@ Initial working version.
 == Upgrade Notice ==
 
 ありません。
-
-== Arbitrary section 1 ==
