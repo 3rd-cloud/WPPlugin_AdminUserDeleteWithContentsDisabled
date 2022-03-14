@@ -40,7 +40,6 @@ A. ありません。プラグインを有効にするだけでOKです。
 == Screenshots ==
 
 1. プラグイン有効時のユーザー削除画面
-2. "Delete User" page when plugin is enabled
 
 == Changelog ==
 
