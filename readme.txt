@@ -44,7 +44,7 @@ A. ありません。プラグインを有効にするだけでOKです。
 Q. WordPress のメディアライブラリのゴミ箱機能を ON にする方法ではなぜダメなんですか？
 
 A. メディアライブラリのゴミ箱機能を ON にすると、記事のような別の大きなリスクが発生してしまうためオススメいたしません。
-[https://qiita.com/mainy/items/2a525e9b184967e20264](https://qiita.com/mainy/items/2a525e9b184967e20264)
+https://qiita.com/mainy/items/2a525e9b184967e20264
 
 Q. ユーザー削除時に「すべてのコンテンツを消去します。」を一時的に選択したい場合はどうすればよいですか？
 
@@ -53,7 +53,7 @@ A. 一時的にプラグインを無効にしてください。作業後はプ�
 == Screenshots ==
 
 1. プラグイン有効時のユーザー削除画面
-2. "Delete User" page when plugin is enabled
+2. "Delete Users" page when plugin is enabled
 
 == Changelog ==
 
